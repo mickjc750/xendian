@@ -7,6 +7,10 @@
 // Public defines
 //********************************************************************************************************
 
+#ifndef __BYTE_ORDER__
+	#error "__BYTE_ORDER__ is not defined" 
+#else
+
 #if __BYTE_ORDER__ == __ORDER_LITTLE_ENDIAN__
 	#define xendian_little_pack_u64(arg1)	((uint64_t)(arg1))
 	#define xendian_little_pack_u32(arg1)	((uint32_t)(arg1))
@@ -63,6 +67,7 @@
 
 #else
 	#error "Endianess not supported"
+#endif
 #endif
 
 //********************************************************************************************************
